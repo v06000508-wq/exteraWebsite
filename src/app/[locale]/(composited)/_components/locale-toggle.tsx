@@ -13,11 +13,11 @@ export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
             <div className="flex items-center gap-4">
                 <span className="text-xs font-bold tracking-widest text-white bg-primary-500 px-2 py-1 rounded-full">BETA</span>
                 {localeConfig.locales.map((locale, i) => {
+                    const localePath = `/${locale}${path || "/"}`;
                     return (
                         <Fragment key={locale}>
                             <Link
-                                href={path || "/"}
-                                locale={locale}
+                                href={localePath}
                                 className={"uppercase" +
                                     (locale === currentLocale ? " underline decoration-4 underline-offset-8 text-primary-500"
                                         : ""
