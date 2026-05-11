@@ -1,4 +1,4 @@
-import {Link as IntlLink} from "next-intl";
+import IntlLink from "next-intl/link";
 import React, {ComponentProps, ReactNode} from "react";
 
 export type LinkProps = {
