@@ -8,6 +8,9 @@ export type LinkProps = {
     className?: string;
 } & ComponentProps<typeof IntlLink>
 
+const isAnchorOrExternal = (href: string) =>
+    href.startsWith('#') || href.startsWith('/#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tg');
+
 export default function Link(
     {
         underline,
@@ -17,12 +20,25 @@ export default function Link(
         ...props
     }: LinkProps
 ) {
+    const cls = underline ? (className || "") + " group" : className;
+    const underlineEl = underline && (
+        <div className="w-full scale-x-0 group-hover:scale-x-100 h-1 mt-1 rounded-full bg-primary-500 transition-transform duration-300 ease-in-out" />
+    );
+
+    if (isAnchorOrExternal(href)) {
+        const {prefetch, replace, scroll, shallow, locale, ...aProps} = props as any;
+        return (
+            <a href={href} className={cls} {...aProps}>
+                {children}
+                {underlineEl}
+            </a>
+        );
+    }
+
     return (
-        <IntlLink href={href} className={(underline ? (className || "") + " group" : className)} {...props}>
+        <IntlLink href={href} className={cls} {...props}>
             {children}
-            {underline &&
-                <div className="w-full scale-x-0 group-hover:scale-x-100 h-1 mt-1 rounded-full bg-primary-500 transition-transform duration-300 ease-in-out" />
-            }
+            {underlineEl}
         </IntlLink>
-    )
+    );
 }
