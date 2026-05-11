@@ -9,19 +9,32 @@ export type DownloadButtonProps = {
     icon: ReactNode
 } & ({disabled?: true;} | {disabled?: false | undefined; href: string;})
 
-export default function DownloadButton({disabled, href, icon, name, eyebrow}: DownloadButtonProps) {
-    return (
-        <Link
-            className={`rounded-3xl border-2 border-neutral-200 ${disabled ? 'pointer-events-none text-neutral-300' : 'text-neutral-800'} 
+const sharedClassName = (disabled?: boolean) =>
+    `rounded-3xl border-2 border-neutral-200 ${disabled ? 'pointer-events-none text-neutral-300' : 'text-neutral-800'} 
                 flex flex-row px-8 py-5 hover:text-primary-500 transition-colors items-center gap-8 w-full max-w-md lg:max-w-xs 
-                bg-white hover:border-primary-500 duration-300 ease-in-out`}
-            href={href || "#"}
-        >
-            {icon}
-            <div className="flex flex-col">
-                <p className="text-xl">{eyebrow}</p>
-                <p className="font-display font-bold text-3xl">{name}</p>
+                bg-white hover:border-primary-500 duration-300 ease-in-out`;
+
+const Inner = ({icon, name, eyebrow}: {icon: ReactNode, name: string, eyebrow: string}) => (
+    <>
+        {icon}
+        <div className="flex flex-col">
+            <p className="text-xl">{eyebrow}</p>
+            <p className="font-display font-bold text-3xl">{name}</p>
+        </div>
+    </>
+);
+
+export default function DownloadButton({disabled, href, icon, name, eyebrow}: DownloadButtonProps) {
+    if (disabled) {
+        return (
+            <div className={sharedClassName(true)}>
+                <Inner icon={icon} name={name} eyebrow={eyebrow} />
             </div>
+        );
+    }
+    return (
+        <Link className={sharedClassName(false)} href={href!}>
+            <Inner icon={icon} name={name} eyebrow={eyebrow} />
         </Link>
-    )
+    );
 }

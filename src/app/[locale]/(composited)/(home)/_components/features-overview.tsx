@@ -60,18 +60,15 @@ export default function FeaturesOverview({features, className, smoothnessCoeffic
                 ref={titles}
             >
                 {features.map(({name}, i) => (
-                    <a
-                        href="#"
-                        onClick={e => {
-                            e.preventDefault()
-                            setSlide(i)
-                        }}
+                    <button
+                        type="button"
+                        onClick={() => setSlide(i)}
                         className={"min-w-max max-h-20 whitespace-pre-line " +
                             (slide !== i ? "text-neutral-500" : "text-black")}
                         key={i}
                     >
                         {name}
-                    </a>
+                    </button>
                 ))}
                 <div className="min-w-full h-full" />
             </div>
