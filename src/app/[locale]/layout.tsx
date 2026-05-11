@@ -1,4 +1,4 @@
-import '@/app/[locale]/_assets/globals.css'
+﻿import '@/app/[locale]/_assets/globals.css'
 import React, {ReactNode} from "react";
 import localFont from "next/font/local";
 import {useLocale} from 'next-intl';
@@ -74,7 +74,7 @@ export async function generateMetadata(): Promise<Metadata> {
         description: t('description'),
         generator: "Next.js",
         colorScheme: "light",
-        themeColor: "#F54142",
+        themeColor: "#000000",
         icons: {
             icon: '/favicon.ico',
             shortcut: '/favicon.ico',
@@ -96,7 +96,7 @@ export async function generateMetadata(): Promise<Metadata> {
             site: "@immat0x1",
             app: {
                 id: {
-                    googleplay: "com.exteragram.messenger"
+                    googleplay: "com.VSMGram.messenger"
                 }
             }
         },

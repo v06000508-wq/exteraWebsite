@@ -1,4 +1,4 @@
-import {useTranslations} from "next-intl";
+﻿import {useTranslations} from "next-intl";
 import Link from "@/app/[locale]/_components/link";
 import IconCanvas from "@/app/[locale]/_components/icon-canvas";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default function Home() {
 
     return (
         <>
-            <IconCanvas probability={0.02} paths={checkedIcons} color="#F54142" height={2000}/>
+            <IconCanvas probability={0.02} paths={checkedIcons} color="#000000" height={2000}/>
 
             <section className="w-full flex justify-center items-center flex-col gap-4 mt-48 md:mt-72 mb-16 px-4" id="top">
                 <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">{t("title")}</h1>
@@ -176,7 +176,7 @@ export default function Home() {
                 word-spacing-6 text-6xl sm:text-8xl md:text-9xl font-bold font-display"
             >
                 <Marquee rotation={8} className="text-neutral-300" scrollBoost={0.25}>
-                    {splashes.join(" ")}
+                    {"Приватный Быстрый Свободный Мощный Твой Настраиваемый"}
                 </Marquee>
                 <div className="h-4 md:h-12" />
                 <Marquee rotation={8} baseVelocity={-1} className="text-white text-outline-neutral-300" scrollBoost={0.25}>

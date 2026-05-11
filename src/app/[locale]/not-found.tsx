@@ -1,4 +1,4 @@
-import {useTranslations} from "next-intl";
+﻿import {useTranslations} from "next-intl";
 import {checkedIcons} from "@/loaders/icons";
 import IconCanvas from "@/app/[locale]/_components/icon-canvas";
 import Link from "@/app/[locale]/_components/link";
@@ -10,7 +10,7 @@ export default function ErrorNotFound() {
 
     return (
         <>
-            <IconCanvas probability={0.02} paths={checkedIcons} color="#F54142" />
+            <IconCanvas probability={0.02} paths={checkedIcons} color="#000000" />
             <div className="flex flex-col items-center justify-center h-screen w-full gap-8 text-center">
                 <h1 className="font-display font-bold text-8xl md:text-9xl text-primary-500">404</h1>
                 <p className="text-xl md:text-3xl px-4 max-w-md md:max-w-xl">{t("description")}</p>

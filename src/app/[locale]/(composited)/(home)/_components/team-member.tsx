@@ -5,7 +5,7 @@ export type TeamMemberProps = {
     href: string;
     name: string;
     role: string;
-    img: string;
+    img?: string;
     buttonText: string;
 }
 
@@ -24,7 +24,7 @@ export default function TeamMember({href, name, role, img, buttonText}: TeamMemb
                 quality={100}
             />
             <div className="w-full flex-1" />
-            <Image src={img} alt={name} className="rounded-full aspect-square mb-6 w-24 md:w-36" width={150} height={150} />
+            {img && <Image src={img} alt={name} className="rounded-full aspect-square mb-6 w-24 md:w-36" width={150} height={150} />}
             <h6 className="font-display font-bold text-2xl md:text-3xl">{name}</h6>
             <p className="text-xl md:text-2xl text-center">{role}</p>
             <div className="w-full flex-1" />

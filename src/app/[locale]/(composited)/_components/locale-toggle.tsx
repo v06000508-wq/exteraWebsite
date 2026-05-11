@@ -11,6 +11,7 @@ export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
     return (
         <div className="flex gap-16">
             <div className="flex items-center gap-4">
+                <span className="text-xs font-bold tracking-widest text-white bg-primary-500 px-2 py-1 rounded-full">BETA</span>
                 {localeConfig.locales.map((locale, i) => {
                     return (
                         <Fragment key={locale}>

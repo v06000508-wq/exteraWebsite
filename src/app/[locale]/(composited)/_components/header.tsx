@@ -39,17 +39,8 @@ export default function Header() {
                         </Marquee>
                     </Button>
                 </Link>
-                <HeaderLink href="/#download" mobile>
-                    {t('download')}
-                </HeaderLink>
                 <HeaderLink href="/legal/privacy" mobile>
                     {t('privacy')}
-                </HeaderLink>
-                <HeaderLink href="https://github.com/exteraSquad" mobile>
-                    {t('source')}
-                </HeaderLink>
-                <HeaderLink href="https://t.me/exteraChat" mobile>
-                    {t('chats')}
                 </HeaderLink>
             </HeaderMenu>
         </header>

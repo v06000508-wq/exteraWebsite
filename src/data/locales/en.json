@@ -1,8 +1,8 @@
-{
+﻿{
   "nav": {
     "logo": "Back to homepage",
-    "title": "exteraGram",
-    "description": "experimental third-party Telegram client based on official sources.",
+    "title": "VSMGram",
+    "description": "test third-party Telegram client based on open source.",
     "team": "Team",
     "features": "Features",
     "download": "Download",
@@ -15,10 +15,10 @@
     }
   },
   "home": {
-    "title": "exteraGram",
-    "description": "Experimental third-party Telegram client based on official sources.",
+    "title": "VSMGram",
+    "description": "Test third-party Telegram client based on open source.",
     "phone": {
-      "phone": "Phone with exteraGram settings open",
+      "phone": "Phone with VSMGram settings open",
       "emojis": "Panel with default and custom emojis",
       "update": "Menu with on-the-air update options",
       "speed": "Settings for boosting media upload and download speed",
@@ -29,44 +29,44 @@
       "title": "Features",
       "description": "Take a look at the list of features that make our client special!",
       "settings": "Lots of\n settings",
-      "music": "Reworked\n player",
+      "music": "Stealth\n Mode",
       "customization": "Interface\n customization",
       "more": "Discover\n more features",
       "button": "Press me!"
     },
     "more": {
       "title": "And much much more",
-      "description": "We are working hard to improve our client.",
+      "description": "I'm constantly working on improving my client.",
       "theme": {
-        "title": "Dynamic Theme",
-        "description": "Experience exteraGram with the best Material You theme among all Telegram clients, made possible by the amazing work our designers made.",
-        "note": "*for Android 12 and higher",
-        "alt": "Demonstration of monet themes"
+        "title": "Bubble Style & Appearance",
+        "description": "Choose the bubble shape that suits you — classic Telegram, smooth iOS-style, or sharp rectangles. Set message density: compact for information-rich chats or spacious for comfortable reading.",
+        "note": "*changes apply instantly",
+        "alt": "Demonstration of message bubble styles"
       },
       "ui": {
-        "title": "Modern Interface",
-        "description": "Use large variety of settings provided by exteraGram to customise your app's look and feel.",
-        "alt": "Demonstration of wide variety of UI customization settings"
+        "title": "Density & Animations",
+        "description": "Adjust message spacing — from compact for dense chats to spacious for comfortable reading. Control animation speed: disable entirely for max responsiveness or slow down for a smooth, polished feel.",
+        "alt": "Demonstration of message density and animation settings"
       },
       "design": {
-        "title": "Marvelous Design",
-        "description": "Enjoy a fresh modern look using Telegram's design system, Google's Material 3 and custom icons.",
-        "alt": "Demonstration of app design improvements"
+        "title": "Templates & Auto-Save",
+        "description": "Create text templates and insert them with one tap right in the chat. Media from personal chats, groups and channels saves automatically — with flexible settings for each type.",
+        "alt": "Demonstration of message templates and media auto-save"
       },
       "speed": {
         "title": "Download Speed Boost",
-        "description": "Improve media download and upload speeds using our experimental speed boost feature.",
+        "description": "Photos and videos load and send noticeably faster — thanks to an experimental media transfer accelerator.",
         "alt": "Demonstration of settings that allow you to boost download and upload speed"
       },
       "camera": {
-        "title": "The Best Camera",
-        "description": "Use our imporved and configurable camera to take amazing shots right from the app.",
-        "alt": "Demonstration of improved camera screen"
+        "title": "Security & Premium",
+        "description": "Deleted messages won't disappear — they're saved with a trash marker. Bypass restrictions in protected chats and get Telegram Premium features for free: custom emoji, real-time translation, large files and more.",
+        "alt": "Demonstration of security features and local Premium"
       },
       "download": "Download"
     },
     "team": {
-      "title": "Our Team",
+      "title": "Developer",
       "contact": "Contact",
       "roles": {
         "ceo": "CEO",
@@ -96,8 +96,8 @@
     }
   },
   "meta": {
-    "fullTitle": "exteraGram – custom Telegram client",
-    "title": "exteraGram",
-    "description": "Next generation Telegram client for Android, made by exteraSquad."
+    "fullTitle": "VSMGram – custom Telegram client",
+    "title": "VSMGram",
+    "description": "Modified Telegram client for Android by @VladSamsung."
   }
 }

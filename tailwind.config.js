@@ -1,4 +1,4 @@
-const {fontFamily} = require('tailwindcss/defaultTheme')
+﻿const {fontFamily} = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 const generateColorMap = (colors, callback, prefix = '') => {
@@ -32,11 +32,11 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    50: "#FFF6F7",
-                    100: "#FBEEEC",
-                    200: "#FAC4C6",
-                    400: "#F76768",
-                    500: "#F54142",
+                    50: "#F5F5F5",
+                    100: "#E0E0E0",
+                    200: "#9E9E9E",
+                    400: "#424242",
+                    500: "#000000",
                 }
             },
             borderRadius: {

@@ -77,7 +77,7 @@ export default function DragSlider({children}: DragSliderProps) {
                 }
             }}
         >
-            <div className={`contents ${dragged ? 'pointer-events-none' : ''}`}>
+            <div className={`flex justify-center w-full ${dragged ? 'pointer-events-none' : ''}`}>
                 {children}
             </div>
         </div>
