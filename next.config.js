@@ -1,6 +1,4 @@
-const withNextIntl = require('next-intl/plugin')();
-
-module.exports = withNextIntl({
+module.exports = {
     webpack: (config) => {
         config.module.rules.push({
             test: /\.md$/,
@@ -17,4 +15,4 @@ module.exports = withNextIntl({
         ],
         dangerouslyAllowSVG: true
     }
-});
+};
