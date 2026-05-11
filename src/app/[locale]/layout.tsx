@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import {useLocale} from 'next-intl';
 import {notFound} from "next/navigation";
 import {getLocale, getTranslations} from "next-intl/server";
-import {localeConfig} from "@/i18n";
+import {localeConfig} from "@/localeConfig";
 import {Metadata} from "next";
 import Cursor from "@/app/[locale]/_components/cursor";
 

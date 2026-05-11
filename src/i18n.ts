@@ -8,8 +8,3 @@ export default getRequestConfig(async ({locale}) => {
         messages
     }
 });
-
-export const localeConfig = {
-    locales: ['en', 'ru'],
-    defaultLocale: 'en'
-}

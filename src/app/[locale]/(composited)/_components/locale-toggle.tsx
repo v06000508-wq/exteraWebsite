@@ -2,7 +2,7 @@
 
 import Link from "@/app/[locale]/_components/link";
 import {usePathname} from "next-intl/client";
-import {localeConfig} from "@/i18n";
+import {localeConfig} from "@/localeConfig";
 import {Fragment} from "react";
 
 export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
