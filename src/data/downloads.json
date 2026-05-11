@@ -3,18 +3,21 @@
     "eyebrowId": "unavailable",
     "name": "APK",
     "icon": "/images/downloads/apk.svg",
-    "unavailable": true
+    "unavailable": true,
+    "href": ""
   },
   {
     "eyebrowId": "unavailable",
     "name": "GitHub",
     "icon": "/images/downloads/github.svg",
-    "unavailable": true
+    "unavailable": true,
+    "href": ""
   },
   {
     "eyebrowId": "unavailable",
     "name": "Telegram",
     "icon": "/images/downloads/telegram.svg",
-    "unavailable": true
+    "unavailable": true,
+    "href": ""
   }
 ]
