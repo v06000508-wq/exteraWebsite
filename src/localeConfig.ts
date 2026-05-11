@@ -1,4 +1,5 @@
 export const localeConfig = {
     locales: ['en', 'ru'],
-    defaultLocale: 'ru'
+    defaultLocale: 'ru',
+    localeDetection: false
 }
