@@ -2,7 +2,7 @@
 import html from 'remark-html';
 import policy from "@/data/privacy-policy.md"
 import {Database, ShieldUser} from "solar-icon-set";
-import logo from "@/app/[locale]/_assets/logos/logo.svg";
+import logo from "@/app/[locale]/_assets/logos/logo-new.jpg";
 import Image from "next/image";
 import {Metadata} from "next";
 
@@ -15,7 +15,7 @@ export default async function PrivacyPolicy() {
     return (
         <div className="w-full text-center max-w-xl px-2 mx-auto my-16 text-neutral-700">
             <aside className="flex items-center justify-center gap-4 text-primary-500 mb-8">
-                <Image src={logo} alt="VSMGram logo" />
+                <Image src={logo} alt="VSMGram logo" width={64} height={64} className="rounded-full object-cover" />
                 <ShieldUser iconStyle="Bold" color="inherit" size={64} />
                 <Database iconStyle="Bold" color="inherit" size={64} />
             </aside>

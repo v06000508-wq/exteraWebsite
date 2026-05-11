@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/app/[locale]/_assets/logos/logo.png";
+import logo from "@/app/[locale]/_assets/logos/logo-new.jpg";
 import SplashText from "@/app/[locale]/(composited)/_components/splash-text";
 import FooterLink from "@/app/[locale]/(composited)/_components/footer-link";
 import Link from "@/app/[locale]/_components/link";
@@ -14,7 +14,7 @@ export default function Footer() {
         <footer className="flex flex-col gap-16 mt-16 px-8 md:px-16 bg-white pt-4 pb-16">
             <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-8">
                 <div className="flex flex-col gap-4 items-center lg:items-start mb-12 md:mb-0">
-                    <Image src={logo} alt={t("logo")} width={64} />
+                    <Image src={logo} alt={t("logo")} width={64} height={64} className="rounded-full object-cover" />
                     <h3 className="font-display font-bold text-4xl md:text-5xl cursor-help w-full max-w-xs text-center lg:text-left">
                         <SplashText splashes={[
                             t("title"),
@@ -46,14 +46,14 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-2 lg:gap-8 text-neutral-800">
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.design') + ' '}
-                    <Link href="https://t.me/Design480" className="text-primary-500" underline>
-                        480 Design
+                    <Link href="https://t.me/VladSamsung" className="text-primary-500" underline>
+                        VladSamsung
                     </Link>
                 </div>
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.dev') + ' '}
-                    <Link href="https://github.com/exteraSquad" className="text-primary-500" underline>
-                        exteraSquad
+                    <Link href="https://t.me/VladSamsung" className="text-primary-500" underline>
+                        VladSamsung
                     </Link>
                 </div>
             </div>

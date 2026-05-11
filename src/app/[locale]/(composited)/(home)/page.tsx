@@ -23,6 +23,10 @@ import * as icons from "solar-icon-set";
 import {ComponentType} from "react";
 import {IconProps} from "solar-icon-set/dist/types";
 import Anchor from "@/app/[locale]/(composited)/_components/anchor";
+import GlitchTitle from "@/app/[locale]/(composited)/(home)/_components/glitch-title";
+import GlitchText from "@/app/[locale]/(composited)/(home)/_components/glitch-text";
+import SpotlightSection from "@/app/[locale]/(composited)/(home)/_components/spotlight-section";
+import HoverImage from "@/app/[locale]/(composited)/(home)/_components/hover-image";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -32,8 +36,12 @@ export default function Home() {
             <IconCanvas probability={0.02} paths={checkedIcons} color="#000000" height={2000}/>
 
             <section className="w-full flex justify-center items-center flex-col gap-4 mt-48 md:mt-72 mb-16 px-4" id="top">
-                <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">{t("title")}</h1>
-                <p className="text-xl md:text-2xl text-neutral-800 w-full md:w-[30rem] text-center">{t("description")}</p>
+                <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">
+                    <GlitchTitle>{t("title")}</GlitchTitle>
+                </h1>
+                <p className="text-xl md:text-2xl text-neutral-800 w-full md:w-[30rem] text-center">
+                    <GlitchText>{t("description")}</GlitchText>
+                </p>
                 <Link
                     href="/#download"
                     className="md:hidden"
@@ -57,7 +65,7 @@ export default function Home() {
                 />
             </section>
             <Anchor id="features" className="top-12 lg:-top-48" />
-            <section
+            <SpotlightSection
                 className="bg-black text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col w-full-no-offset
                 lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12 mx-offset md:o-16"
             >
@@ -105,7 +113,7 @@ export default function Home() {
                     className="lg:w-[32rem] h-fit md:h-[36rem] lg:-translate-y-96 rounded-3xl bg-primary-100 text-black"
                     leftOffset={24}
                 />
-            </section>
+            </SpotlightSection>
 
             <Anchor id="more" />
             <section
@@ -121,13 +129,14 @@ export default function Home() {
                                 (i % 2 ? 'md:flex-row-reverse' : 'md:flex-row')}
                             key={i}
                         >
-                            <Image
+                            <HoverImage
                                 src={localisePath(img.src)}
                                 alt={t("more." + id + ".alt")}
                                 width={img.width}
                                 height={img.height}
                                 quality={100}
-                                className="w-full md:w-5/12 h-auto"
+                                className="w-full h-auto"
+                                containerClassName="w-full md:w-5/12 rounded-2xl"
                             />
                             <figcaption
                                 className="flex flex-col justify-center gap-1 text-center md:text-left md:w-7/12 h-fit">

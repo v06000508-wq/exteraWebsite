@@ -7,3 +7,80 @@ html {
     scroll-behavior: smooth!important;
     -webkit-tap-highlight-color: transparent;
 }
+
+/* Spotlight cursor effect */
+.spotlight-section {
+    --spotlight-x: 50%;
+    --spotlight-y: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--spotlight-x) var(--spotlight-y),
+        rgba(255, 255, 255, 0.07) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.spotlight-section:hover::before {
+    opacity: 1;
+}
+
+/* Glitch title effect */
+.glitch-title {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-title::before,
+.glitch-title::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.glitch-title[data-glitch]::before {
+    opacity: 1;
+    color: #00f0ff;
+    clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+    transform: translate(-4px, 2px);
+    animation: glitch-slice-1 0.4s steps(1) forwards;
+    mix-blend-mode: screen;
+}
+
+.glitch-title[data-glitch]::after {
+    opacity: 1;
+    color: #ff003c;
+    clip-path: polygon(0 55%, 100% 55%, 100% 75%, 0 75%);
+    transform: translate(4px, -2px);
+    animation: glitch-slice-2 0.4s steps(1) forwards;
+    mix-blend-mode: screen;
+}
+
+@keyframes glitch-slice-1 {
+    0%   { transform: translate(-4px, 2px);  clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%); }
+    20%  { transform: translate(6px, -3px);  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); }
+    40%  { transform: translate(-8px, 1px);  clip-path: polygon(0 5%,  100% 5%,  100% 25%, 0 25%); }
+    60%  { transform: translate(3px, 4px);   clip-path: polygon(0 40%, 100% 40%, 100% 55%, 0 55%); }
+    80%  { transform: translate(-5px, -2px); clip-path: polygon(0 70%, 100% 70%, 100% 90%, 0 90%); }
+    100% { transform: translate(0, 0);       opacity: 0; }
+}
+
+@keyframes glitch-slice-2 {
+    0%   { transform: translate(4px, -2px);  clip-path: polygon(0 55%, 100% 55%, 100% 75%, 0 75%); }
+    25%  { transform: translate(-6px, 3px);  clip-path: polygon(0 10%, 100% 10%, 100% 30%, 0 30%); }
+    50%  { transform: translate(8px, -1px);  clip-path: polygon(0 75%, 100% 75%, 100% 95%, 0 95%); }
+    75%  { transform: translate(-3px, -4px); clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%); }
+    100% { transform: translate(0, 0);       opacity: 0; }
+}
