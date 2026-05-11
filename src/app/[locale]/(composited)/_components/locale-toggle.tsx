@@ -1,19 +1,20 @@
 "use client";
 
 import Link from "@/app/[locale]/_components/link";
-import {usePathname} from "next-intl";
+import {usePathname} from "next/navigation";
 import {localeConfig} from "@/localeConfig";
 import {Fragment} from "react";
 
 export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
-    const path = usePathname();
+    const fullPath = usePathname() || "/";
+    const pathWithoutLocale = fullPath.replace(new RegExp(`^/(${localeConfig.locales.join("|")})`), "") || "/";
 
     return (
         <div className="flex gap-16">
             <div className="flex items-center gap-4">
                 <span className="text-xs font-bold tracking-widest text-white bg-primary-500 px-2 py-1 rounded-full">BETA</span>
                 {localeConfig.locales.map((locale, i) => {
-                    const localePath = `/${locale}${path || "/"}`;
+                    const localePath = `/${locale}${pathWithoutLocale}`;
                     return (
                         <Fragment key={locale}>
                             <Link
