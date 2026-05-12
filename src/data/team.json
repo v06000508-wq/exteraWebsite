@@ -4,5 +4,17 @@
     "name": "VladSamsung",
     "roles": ["leadDev"],
     "img": "/images/team/vladsamsung.jpg"
+  },
+  {
+    "href": "",
+    "name": "va_snetsov",
+    "roles": ["support"],
+    "img": "/images/team/va_snetsov.jpg"
+  },
+  {
+    "href": "",
+    "name": "Katteksss",
+    "roles": ["support"],
+    "img": "/images/team/katteksss.jpg"
   }
 ]

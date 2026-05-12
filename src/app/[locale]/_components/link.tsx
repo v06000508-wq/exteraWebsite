@@ -9,7 +9,7 @@ export type LinkProps = {
 } & ComponentProps<typeof IntlLink>
 
 const isAnchorOrExternal = (href: string) =>
-    href.startsWith('#') || href.startsWith('/#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tg');
+    href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tg');
 
 export default function Link(
     {

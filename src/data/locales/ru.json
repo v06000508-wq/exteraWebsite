@@ -66,7 +66,7 @@
       "download": "Скачать"
     },
     "team": {
-      "title": "Разработчик",
+      "title": "Команда",
       "contact": "Связаться",
       "roles": {
         "ceo": "CEO",
@@ -78,7 +78,8 @@
         "web": "Веб-разработчик",
         "python": "Python-разработчик",
         "themer": "Дизайнер тем",
-        "moe": "Разработчик MoegramX"
+        "moe": "Разработчик MoegramX",
+        "support": "Поддержка"
       }
     },
     "download": {

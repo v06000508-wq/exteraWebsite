@@ -28,16 +28,18 @@ export default function TeamMember({href, name, role, img, buttonText}: TeamMemb
             <h6 className="font-display font-bold text-2xl md:text-3xl">{name}</h6>
             <p className="text-xl md:text-2xl text-center">{role}</p>
             <div className="w-full flex-1" />
-            <Link
-                className="can-hover:translate-y-28 group-hover:translate-y-0 transition-transform w-full py-4 md:py-6 text-xl
-                md:text-2xl bg-primary-500 text-white rounded-xl active:bg-primary-400 active:text-white flex justify-center
-                items-center duration-300 ease-in-out"
-                href={href}
-                target="_blank"
-                data-drag-slider-ignore
-            >
-                {buttonText}
-            </Link>
+            {href && (
+                <Link
+                    className="can-hover:translate-y-28 group-hover:translate-y-0 transition-transform w-full py-4 md:py-6 text-xl
+                    md:text-2xl bg-primary-500 text-white rounded-xl active:bg-primary-400 active:text-white flex justify-center
+                    items-center duration-300 ease-in-out"
+                    href={href}
+                    target="_blank"
+                    data-drag-slider-ignore
+                >
+                    {buttonText}
+                </Link>
+            )}
         </figure>
     )
 }
