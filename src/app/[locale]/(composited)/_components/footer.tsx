@@ -29,6 +29,11 @@ export default function Footer() {
                     >
                         {t('privacy')}
                     </FooterLink>
+                    <FooterLink
+                        href="/changelog"
+                    >
+                        {t('changelog')}
+                    </FooterLink>
                 </div>
                 <Link
                     href="#top"
