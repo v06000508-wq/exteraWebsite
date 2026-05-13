@@ -22,7 +22,7 @@ export default function Link(
 ) {
     const cls = underline ? (className || "") + " group" : className;
     const underlineEl = underline && (
-        <div className="w-full scale-x-0 group-hover:scale-x-100 h-1 mt-1 rounded-full bg-primary-500 transition-transform duration-300 ease-in-out" />
+        <div className="w-full scale-x-0 group-hover:scale-x-100 h-1 mt-1 rounded-full bg-amber-600 transition-transform duration-300 ease-in-out" />
     );
 
     if (isAnchorOrExternal(href)) {

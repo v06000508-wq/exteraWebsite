@@ -31,7 +31,7 @@ export default function TeamMember({href, name, role, img, buttonText}: TeamMemb
             {href && (
                 <Link
                     className="can-hover:translate-y-28 group-hover:translate-y-0 transition-transform w-full py-4 md:py-6 text-xl
-                    md:text-2xl bg-primary-500 text-white rounded-xl active:bg-primary-400 active:text-white flex justify-center
+                    bg-amber-600 text-white rounded-xl active:bg-amber-700 active:text-white flex justify-center
                     items-center duration-300 ease-in-out"
                     href={href}
                     target="_blank"

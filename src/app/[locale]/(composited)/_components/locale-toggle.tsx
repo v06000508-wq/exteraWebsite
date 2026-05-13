@@ -12,7 +12,7 @@ export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
     return (
         <div className="flex gap-16">
             <div className="flex items-center gap-4">
-                <span className="text-xs font-bold tracking-widest text-white bg-primary-500 px-2 py-1 rounded-full">BETA</span>
+                <span className="text-xs font-bold tracking-widest text-amber-900 bg-amber-300 px-2 py-1 rounded-full">BETA</span>
                 {localeConfig.locales.map((locale, i) => {
                     const localePath = `/${locale}${pathWithoutLocale}`;
                     return (
@@ -20,7 +20,7 @@ export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
                             <Link
                                 href={localePath}
                                 className={"uppercase" +
-                                    (locale === currentLocale ? " underline decoration-4 underline-offset-8 text-primary-500"
+                                    (locale === currentLocale ? " underline decoration-4 underline-offset-8 text-amber-700"
                                         : ""
                                     )}
                                 data-cursor-text={locale.toUpperCase()}
@@ -28,7 +28,7 @@ export default function LocaleToggle({currentLocale}: {currentLocale: string}) {
                                 {locale}
                             </Link>
                             {i < localeConfig.locales.length - 1 &&
-                                <div className="bg-neutral-300 rounded h-8 w-1"/>
+                                <div className="bg-amber-400/50 rounded h-8 w-1"/>
                             }
                         </Fragment>
                     )

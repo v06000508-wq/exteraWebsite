@@ -66,7 +66,7 @@ export default function Home() {
             </section>
             <Anchor id="features" className="top-12 lg:-top-48" />
             <SpotlightSection
-                className="bg-black text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col w-full-no-offset
+                className="bg-amber-900 text-white justify-between flex lg:px-24 lg:py-36 lg:gap-4 mb-16 flex-col w-full-no-offset
                 lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12 mx-offset md:o-16"
             >
                 <div className="flex flex-col gap-4 justify-center">
@@ -99,9 +99,9 @@ export default function Home() {
                                     <Link
                                         href="/#more"
                                         role="button"
-                                        className="w-32 h-32 aspect-square hover:bg-primary-500 flex-col hover:text-primary-50
-                                        rounded-full bg-white text-primary-500 flex justify-center items-center transition-colors
-                                        active:bg-primary-400 active:text-primary-50 duration-300 ease-in-out"
+                                        className="w-32 h-32 aspect-square hover:bg-amber-600 flex-col hover:text-amber-50
+                                        rounded-full bg-white text-amber-600 flex justify-center items-center transition-colors
+                                        active:bg-amber-700 active:text-amber-50 duration-300 ease-in-out"
                                     >
                                         <SquareArrowDown size={60} iconStyle="Bold" />
                                     </Link>
@@ -110,7 +110,7 @@ export default function Home() {
                             )
                         },
                     ]}
-                    className="lg:w-[32rem] h-fit md:h-[36rem] lg:-translate-y-96 rounded-3xl bg-primary-100 text-black"
+                    className="lg:w-[32rem] h-fit lg:-translate-y-96 rounded-3xl bg-amber-50 text-amber-900"
                     leftOffset={24}
                 />
             </SpotlightSection>
@@ -142,7 +142,7 @@ export default function Home() {
                                 className="flex flex-col justify-center gap-1 text-center md:text-left md:w-7/12 h-fit">
                                 {Icon && (
                                     <div
-                                        className="flex justify-center p-4 rounded-full bg-primary-500 text-white w-min
+                                        className="flex justify-center p-4 rounded-full bg-amber-600 text-white w-min
                                         h-min items-center mx-auto md:mx-0 mb-4"
                                     >
                                         <Icon iconStyle="Bold" size={40} />
