@@ -87,7 +87,8 @@
       "store": "Get it in",
       "file": "Download as",
       "link": "Open through",
-      "unavailable": "Soon in"
+      "unavailable": "Soon in",
+      "source": "View on"
     }
   },
   "errors": {

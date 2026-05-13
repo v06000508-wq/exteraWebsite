@@ -7,11 +7,11 @@
     "href": ""
   },
   {
-    "eyebrowId": "unavailable",
+    "eyebrowId": "source",
     "name": "GitHub",
     "icon": "/images/downloads/github.svg",
-    "unavailable": true,
-    "href": ""
+    "unavailable": false,
+    "href": "https://github.com/v06000508-wq/VSMGRAM.git"
   },
   {
     "eyebrowId": "unavailable",
