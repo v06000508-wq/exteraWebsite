@@ -1,4 +1,4 @@
-﻿const {fontFamily} = require('tailwindcss/defaultTheme')
+const {fontFamily} = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 const generateColorMap = (colors, callback, prefix = '') => {
@@ -24,6 +24,7 @@ module.exports = {
     content: [
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
+    darkMode: "class",
     theme: {
         fontFamily: {
             sans: ["var(--font-sans)", ...fontFamily.sans],

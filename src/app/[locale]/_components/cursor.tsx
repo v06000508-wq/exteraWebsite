@@ -14,7 +14,6 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
     const pullOpacity = useRef(0);
     const pullText = useRef<HTMLDivElement>(null);
     const hoveredElement = useRef<Element | null>(null);
-    const [light, setLight] = useState(false);
     const [text, setText] = useState("");
 
     useEffect(() => {
@@ -55,12 +54,6 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                 trail.current.style.width = trailSize.current.width + "px";
                 trail.current.style.height = trailSize.current.height + "px";
 
-                // Light
-                const linkParent = hoveredElement.current?.closest("button, a");
-                const isLight = (cursorStyle === "pointer" &&
-                    linkParent?.className.includes("bg-amber-600")
-                ) || cursorStyle === "grab";
-                setLight(isLight);
 
                 // Text
                 const textTarget = cursorStyle === 'grab' ? 'PULL' :
@@ -102,7 +95,7 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
         <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 cannot-hover:hidden">
             <div
                 className={`absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none
-                ${light ? "bg-amber-100" : "bg-amber-600"} transition-colors duration-300 ease-in-out`}
+                bg-black dark:bg-white transition-colors duration-300 ease-in-out`}
                 ref={trail}
             >
                 <div
@@ -110,7 +103,7 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                     ref={pullText}
                 >
                     <span
-                        className={`text-sm font-bold ${light ? "text-amber-600" : "text-amber-100"} transition-colors duration-300 ease-in-out`}
+                        className={`text-sm font-bold text-white dark:text-black transition-colors duration-300 ease-in-out`}
                     >
                         {text}
                     </span>

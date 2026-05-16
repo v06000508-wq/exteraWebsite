@@ -64,7 +64,7 @@ export default function FeaturesOverview({features, className, smoothnessCoeffic
                         type="button"
                         onClick={() => setSlide(i)}
                         className={"min-w-max max-h-20 whitespace-pre-line " +
-                            (slide !== i ? "text-neutral-500" : "text-black")}
+                            (slide !== i ? "text-neutral-500" : "text-black dark:text-white")}
                         key={i}
                     >
                         {name}
@@ -79,7 +79,7 @@ export default function FeaturesOverview({features, className, smoothnessCoeffic
                     </div>
                 ))}
             </div>
-            <div className="absolute inset-x-0 bottom-16 lg:bottom-0 top-autp w-full h-48 bg-gradient-to-t from-primary-100 to-transparent pointer-events-none rounded-b-3xl" />
+            <div className="absolute inset-x-0 bottom-16 lg:bottom-0 top-auto w-full h-24 bg-gradient-to-t from-neutral-50 dark:from-neutral-800 to-transparent pointer-events-none rounded-b-3xl" />
             <div className="absolute flex flex-row gap-2 p-3 rounded-full mx-auto bg-neutral-900 bottom-8 lg:-bottom-16 w-fit left-1/2 -translate-x-1/2">
                 {features.map((_, i) => (
                     <button

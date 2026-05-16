@@ -10,9 +10,9 @@ export type DownloadButtonProps = {
 } & ({disabled?: true;} | {disabled?: false | undefined; href: string;})
 
 const sharedClassName = (disabled?: boolean) =>
-    `rounded-3xl border-2 border-neutral-200 ${disabled ? 'pointer-events-none text-neutral-300' : 'text-neutral-800'} 
-                flex flex-row px-8 py-5 hover:text-primary-500 transition-colors items-center gap-8 w-full max-w-md lg:max-w-xs 
-                bg-white hover:border-primary-500 duration-300 ease-in-out`;
+    `rounded-3xl border-2 border-neutral-200 dark:border-neutral-800 ${disabled ? 'pointer-events-none text-neutral-300 dark:text-neutral-700' : 'text-neutral-800 dark:text-white'} 
+                flex flex-row px-8 py-5 hover:text-black dark:hover:text-white transition-colors items-center gap-8 w-full max-w-md lg:max-w-xs 
+                bg-white dark:bg-black hover:border-black dark:hover:border-white duration-300 ease-in-out`;
 
 const Inner = ({icon, name, eyebrow}: {icon: ReactNode, name: string, eyebrow: string}) => (
     <>

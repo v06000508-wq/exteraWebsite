@@ -1,6 +1,7 @@
 "use client";
 
-import {useCallback, useEffect, useRef} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
+import {useTheme} from "next-themes";
 
 export type PathData = {
     _name: string;
@@ -108,6 +109,12 @@ export default function IconCanvas(
     const currentFrame = useRef<number>(0);
     const lastFrameTime = useRef<DOMHighResTimeStamp>(0);
     const icons = useRef<Icon[]>([])
+    const { theme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    const iconColor = color || (mounted && theme === 'dark' ? '#ffffff' : '#000000');
 
     const animate = useCallback((time: DOMHighResTimeStamp) => {
         const c = canvas.current
@@ -167,7 +174,7 @@ export default function IconCanvas(
                 if (opacity.length < 2) opacity = "0" + opacity;
 
                 ctx.beginPath();
-                ctx.fillStyle = color + opacity;
+                ctx.fillStyle = iconColor + opacity;
                 const path = new Path2D(icon.path.d);
                 ctx.fill(path, icon.path.fillRule);
 
@@ -180,7 +187,7 @@ export default function IconCanvas(
         currentFrame.current = requestAnimationFrame(animate);
     }, [
         canvas,
-        color,
+        iconColor,
         maxOpacity,
         maxRotationVelocity,
         maxScale,

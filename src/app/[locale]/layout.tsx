@@ -1,4 +1,4 @@
-﻿import '@/app/[locale]/_assets/globals.css'
+import '@/app/[locale]/_assets/globals.css'
 import React, {ReactNode} from "react";
 import localFont from "next/font/local";
 import {useLocale} from 'next-intl';
@@ -7,6 +7,7 @@ import {getLocale, getTranslations} from "next-intl/server";
 import {localeConfig} from "@/localeConfig";
 import {Metadata} from "next";
 import Cursor from "@/app/[locale]/_components/cursor";
+import {ThemeProvider} from "@/app/[locale]/_components/theme-provider";
 
 const calSans = localFont({
     src: '_assets/fonts/CalSans-SemiBold.woff2',
@@ -47,12 +48,14 @@ export default function RootLayout(
     return (
         <html lang={locale} className="scroll-smooth selection:bg-primary-100 selection:text-primary-500">
         <head/>
-        <body className={`${onest.variable} ${calSans.variable} font-sans overscroll-none`} style={{
+        <body className={`${onest.variable} ${calSans.variable} font-sans overscroll-none dark:bg-black dark:text-white transition-colors duration-300`} style={{
             '--font-sans': 'var(--font-onest)',
             '--font-display': locale == 'ru' ? 'var(--font-onest)' : 'var(--font-cal-sans)',
         } as any}>
-            <Cursor />
-            {children}
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+                <Cursor />
+                {children}
+            </ThemeProvider>
         </body>
         </html>
     )

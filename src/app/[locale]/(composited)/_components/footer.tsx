@@ -11,7 +11,7 @@ export default function Footer() {
     const t = useTranslations("nav");
 
     return (
-        <footer className="flex flex-col gap-16 mt-16 px-8 md:px-16 bg-white pt-4 pb-16">
+        <footer className="flex flex-col gap-16 mt-16 px-8 md:px-16 bg-white dark:bg-black pt-4 pb-16 transition-colors duration-300">
             <div className="flex flex-col lg:flex-row w-full justify-between items-center gap-8">
                 <div className="flex flex-col gap-4 items-center lg:items-start mb-12 md:mb-0">
                     <Image src={logo} alt={t("logo")} width={64} height={64} className="rounded-full object-cover" />
@@ -21,7 +21,7 @@ export default function Footer() {
                             ...splashes.map(s => s.toLowerCase())
                         ]} />
                     </h3>
-                    <p className="text-xl text-neutral-800 w-full max-w-sm text-center lg:text-left">{t("description")}</p>
+                    <p className="text-xl text-neutral-800 dark:text-neutral-400 w-full max-w-sm text-center lg:text-left">{t("description")}</p>
                 </div>
                 <div className="flex flex-col gap-8 lg:gap-4 items-center lg:items-start w-full max-w-xs">
                     <FooterLink
@@ -38,9 +38,9 @@ export default function Footer() {
                 <Link
                     href="#top"
                     role="button"
-                    className="group w-32 h-32 font-bold font-display aspect-square text-4xl overflow-hidden hover:bg-amber-600 flex-col
-                        hover:text-amber-50 rounded-full bg-amber-100 text-amber-600 flex justify-center items-center transition-colors
-                        active:bg-amber-500 active:text-amber-50 duration-300 ease-in-out min-w-max min-h-max"
+                    className="group w-32 h-32 font-bold font-display aspect-square text-4xl overflow-hidden hover:bg-gray-900 dark:hover:bg-gray-100 flex-col
+                        hover:text-white dark:hover:text-black rounded-full bg-black dark:bg-white text-white dark:text-black flex justify-center items-center transition-colors
+                        active:bg-gray-800 dark:active:bg-gray-200 active:text-white dark:active:text-black duration-300 ease-in-out min-w-max min-h-max"
                 >
                     <div className="group-hover:-translate-y-32 transition-transform duration-300 ease-in-out">up</div>
                     <div className="translate-y-32 group-hover:-translate-y-5 transition-transform h-0 duration-300 ease-in-out flex items-center">
@@ -48,16 +48,16 @@ export default function Footer() {
                     </div>
                 </Link>
             </div>
-            <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-2 lg:gap-8 text-neutral-800">
+            <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-2 lg:gap-8 text-neutral-600 dark:text-neutral-400">
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.design') + ' '}
-                    <Link href="https://t.me/VladSamsung" className="text-primary-500" underline>
+                    <Link href="https://t.me/VladSamsung" className="text-black dark:text-white" underline>
                         VladSamsung
                     </Link>
                 </div>
                 <div className="hover:font-semibold transition-all flex gap-1">
                     {t('credits.dev') + ' '}
-                    <Link href="https://t.me/VladSamsung" className="text-primary-500" underline>
+                    <Link href="https://t.me/VladSamsung" className="text-black dark:text-white" underline>
                         VladSamsung
                     </Link>
                 </div>

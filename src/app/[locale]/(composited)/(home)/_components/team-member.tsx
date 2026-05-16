@@ -12,13 +12,13 @@ export type TeamMemberProps = {
 export default function TeamMember({href, name, role, img, buttonText}: TeamMemberProps) {
     return (
         <figure
-            className="group border-2 border-neutral-300 rounded-4xl p-4 md:p-8 flex flex-col justify-center duration-300 ease-in-out
-            items-center w-72 md:w-96 h-96 md:h-[32rem] hover:border-primary-500 overflow-hidden transition-colors relative"
+            className="group border-2 border-neutral-300 dark:border-neutral-800 rounded-4xl p-4 md:p-8 flex flex-col justify-center duration-300 ease-in-out
+            items-center w-72 md:w-96 h-96 md:h-[32rem] hover:border-black dark:hover:border-white overflow-hidden transition-colors relative"
         >
             <Image
                 src="/images/team/background.png"
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover -z-10 opacity-0 group-hover:opacity-100 duration-300 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover -z-10 opacity-0 group-hover:opacity-100 dark:group-hover:opacity-30 duration-300 ease-in-out"
                 width={760}
                 height={1014}
                 quality={100}
@@ -31,7 +31,7 @@ export default function TeamMember({href, name, role, img, buttonText}: TeamMemb
             {href && (
                 <Link
                     className="can-hover:translate-y-28 group-hover:translate-y-0 transition-transform w-full py-4 md:py-6 text-xl
-                    bg-amber-600 text-white rounded-xl active:bg-amber-700 active:text-white flex justify-center
+                    bg-black dark:bg-white text-white dark:text-black rounded-xl active:bg-gray-900 dark:active:bg-gray-200 flex justify-center
                     items-center duration-300 ease-in-out"
                     href={href}
                     target="_blank"

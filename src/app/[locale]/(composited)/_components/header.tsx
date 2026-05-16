@@ -5,6 +5,7 @@ import Button from "@/app/[locale]/_components/button";
 import Marquee from "@/app/[locale]/_components/marquee";
 import HeaderLink from "@/app/[locale]/(composited)/_components/header-link";
 import HeaderMenu from "@/app/[locale]/(composited)/_components/header-menu";
+import ThemeToggle from "@/app/[locale]/(composited)/_components/theme-toggle";
 
 export default function Header() {
     const currentLocale = useLocale();
@@ -13,10 +14,12 @@ export default function Header() {
     return (
         <header
             className="relative flex justify-between items-center mb-16 font-display font-bold text-2xl sticky top-0 py-4 md:py-8
-            bg-[url('/images/header-mobile.png')] md:bg-[url('/images/header-pc.png')] bg-cover bg-center bg-no-repeat px-8 md:px-16 z-40 text-amber-800
-            before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-amber-50/50 before:to-amber-100/90 before:pointer-events-none"
+            bg-white dark:bg-black px-8 md:px-16 z-40 text-black dark:text-white border-b border-gray-100 dark:border-neutral-800 transition-colors duration-300"
         >
-            <LocaleToggle currentLocale={currentLocale}/>
+            <div className="flex items-center gap-4">
+                <LocaleToggle currentLocale={currentLocale}/>
+                <ThemeToggle />
+            </div>
             <HeaderMenu>
                 <HeaderLink
                     href="/#team"
