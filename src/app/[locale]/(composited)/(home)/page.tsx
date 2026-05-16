@@ -28,6 +28,7 @@ import GlitchTitle from "@/app/[locale]/(composited)/(home)/_components/glitch-t
 import GlitchText from "@/app/[locale]/(composited)/(home)/_components/glitch-text";
 import SpotlightSection from "@/app/[locale]/(composited)/(home)/_components/spotlight-section";
 import HoverImage from "@/app/[locale]/(composited)/(home)/_components/hover-image";
+import { Reveal } from "@/app/[locale]/_components/reveal";
 
 export default function Home() {
     const t = useTranslations('home');
@@ -37,12 +38,16 @@ export default function Home() {
             <IconCanvas probability={0.02} paths={checkedIcons} height={2000} />
 
             <section className="w-full flex justify-center items-center flex-col gap-4 mt-48 md:mt-72 mb-16 px-4" id="top">
-                <h1 className="text-primary-500 font-bold font-display text-5xl md:text-6xl lg:text-7xl">
-                    <GlitchTitle>{t("title")}</GlitchTitle>
-                </h1>
-                <p className="text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 w-full md:w-[30rem] text-center">
-                    <GlitchText>{t("description")}</GlitchText>
-                </p>
+                <Reveal>
+                    <h1 className="text-black dark:text-white font-bold font-display text-5xl md:text-6xl lg:text-7xl">
+                        <GlitchTitle>{t("title")}</GlitchTitle>
+                    </h1>
+                </Reveal>
+                <Reveal delay={0.2}>
+                    <p className="text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 w-full md:w-[30rem] text-center">
+                        <GlitchText>{t("description")}</GlitchText>
+                    </p>
+                </Reveal>
                 <Link
                     href="/#download"
                     className="md:hidden"
@@ -51,7 +56,9 @@ export default function Home() {
                         {t('more.download')}
                     </Button>
                 </Link>
-                <Phone3D textureUrl="/images/phone/custom_screen.jpg" />
+                <div data-cursor-mode="rotate" className="w-full flex justify-center">
+                    <Phone3D textureUrl="/images/phone/custom_screen.jpg" />
+                </div>
             </section>
             <Anchor id="features" className="top-12 lg:-top-48" />
             <SpotlightSection
@@ -59,12 +66,16 @@ export default function Home() {
                 lg:flex-row rounded-4xl lg:rounded-6xl lg:h-[28rem] mt-64 sm:p-12 sm:pt-16 gap-12 p-4 pt-12 mx-offset md:o-16"
             >
                 <div className="flex flex-col gap-4 justify-center">
-                    <h3 className="font-bold font-display text-5xl lg:text-6xl 2xl:text-8xl text-center lg:text-left">
-                        {t("features.title")}
-                    </h3>
-                    <p className="text-lg md:text-xl xl:text-2xl w-full lg:max-w-lg text-center lg:text-left">
-                        {t("features.description")}
-                    </p>
+                    <Reveal>
+                        <h3 className="font-bold font-display text-5xl lg:text-6xl 2xl:text-8xl text-center lg:text-left">
+                            {t("features.title")}
+                        </h3>
+                    </Reveal>
+                    <Reveal delay={0.2}>
+                        <p className="text-lg md:text-xl xl:text-2xl w-full lg:max-w-lg text-center lg:text-left">
+                            {t("features.description")}
+                        </p>
+                    </Reveal>
                 </div>
 
                 <FeaturesOverview
@@ -126,6 +137,7 @@ export default function Home() {
                                 quality={100}
                                 className="w-full h-auto"
                                 containerClassName="w-full md:w-5/12 rounded-2xl"
+                                data-cursor-mode="view"
                             />
                             <figcaption
                                 className="flex flex-col justify-center gap-1 text-center md:text-left md:w-7/12 h-fit">
@@ -153,12 +165,16 @@ export default function Home() {
                     )
                 })}
                 <figure className="flex flex-col gap-4 lg:gap-6 items-center">
-                    <h3 className="font-bold font-display text-4xl lg:text-7xl text-center">
-                        {t("more.title")}
-                    </h3>
-                    <p className="text-lg md:text-xl xl:text-2xl text-neutral-800 dark:text-neutral-200 w-full max-w-lg text-center">
-                        {t("more.description")}
-                    </p>
+                    <Reveal>
+                        <h3 className="font-bold font-display text-4xl lg:text-7xl text-center">
+                            {t("more.title")}
+                        </h3>
+                    </Reveal>
+                    <Reveal delay={0.2}>
+                        <p className="text-lg md:text-xl xl:text-2xl text-neutral-800 dark:text-neutral-200 w-full max-w-lg text-center">
+                            {t("more.description")}
+                        </p>
+                    </Reveal>
                     <Link
                         href="/#download"
                     >

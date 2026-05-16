@@ -11,6 +11,10 @@ export default function GlitchTitle({children, className}: { children: string; c
 
     useEffect(() => {
         setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (!mounted) return;
         const el = ref.current;
         if (!el) return;
 
@@ -18,6 +22,8 @@ export default function GlitchTitle({children, className}: { children: string; c
             el.setAttribute("data-glitch", "true");
             return;
         }
+
+        el.removeAttribute("data-glitch");
 
         let timeout: ReturnType<typeof setTimeout>;
         function scheduleGlitch() {
@@ -34,7 +40,7 @@ export default function GlitchTitle({children, className}: { children: string; c
 
         scheduleGlitch();
         return () => clearTimeout(timeout);
-    }, [theme]);
+    }, [theme, mounted]);
 
     return (
         <span ref={ref} className={`glitch-title ${className ?? ""}`} data-text={children}>

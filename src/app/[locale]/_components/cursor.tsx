@@ -42,11 +42,15 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
                 trail.current.style.top = trailPosition.current.y + "px";
 
                 // Trail size
+                const customMode = hoveredElement.current?.closest("[data-cursor-mode]")?.getAttribute("data-cursor-mode");
+                
                 const trailSizeTarget =
                     customTextParent ? {width: maxParentDimension + 16, height: maxParentDimension + 16} :
+                        customMode === "view" ? {width: 80, height: 80} :
+                        customMode === "rotate" ? {width: 80, height: 80} :
                         cursorStyle === "pointer" ? {width: 24, height: 24} :
-                            cursorStyle === "grab" ? {width: 64, height: 64} :
-                                {width: 12, height: 12};
+                        cursorStyle === "grab" ? {width: 64, height: 64} :
+                        {width: 12, height: 12};
 
                 trailSize.current.width = trailSize.current.width * smoothnessCoefficient + trailSizeTarget.width * (1 - smoothnessCoefficient);
                 trailSize.current.height = trailSize.current.height * smoothnessCoefficient + trailSizeTarget.height * (1 - smoothnessCoefficient);
@@ -56,8 +60,12 @@ export default function Cursor({smoothnessCoefficient = 0.9}: CursorProps) {
 
 
                 // Text
-                const textTarget = cursorStyle === 'grab' ? 'PULL' :
+                const textTarget = 
+                    customMode === "view" ? "VIEW" :
+                    customMode === "rotate" ? "ROTATE" :
+                    cursorStyle === 'grab' ? 'PULL' :
                     (customTextParent?.getAttribute("data-cursor-text") || "");
+                
                 const textTargetChanged = textTarget !== text;
                 if (textTargetChanged) {
                     setText(textTarget);
